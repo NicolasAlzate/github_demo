@@ -24,6 +24,8 @@ it ('Demo Example', function () {
     cy.get("body > app-root > form-comp > div > form > div:nth-child(1) > input").should('have.attr','minlength','2')
     // Assert
     cy.get('#inlineRadio3').should('be.disabled')
+    // When we want to check what is going on with the test we can use cy.pause() 
+    //cy.pause();
     cy.get(':nth-child(2) > .nav-link').click()
     cy.get('h4.card-title').each(($el,index,$list)=>{
         if($el.text().includes('Blackberry')) 

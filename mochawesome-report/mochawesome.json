@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-16T22:43:02.070Z",
+    "end": "2022-05-16T22:43:10.207Z",
+    "duration": 8137,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "489900f9-626f-436a-b960-4d8a36f928c2",
+      "title": "",
+      "fullFile": "cypress/integration/Test/GreenKart/Test2.js",
+      "file": "cypress/integration/Test/GreenKart/Test2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a19212c0-760a-4ea7-980e-aaef8a702a7f",
+          "title": "My  Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My Secod Test Case",
+              "fullTitle": "My  Test Suite My Secod Test Case",
+              "timedOut": null,
+              "duration": 5960,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to\ncy.visit(\"https://rahulshettyacademy.com/seleniumPractise/#/\");\ncy.get(\"input[placeholder='Search for Vegetables and Fruits']\").type('Ca'); //wait as a Thread Sleep is using like this\ncy.wait(2000); // Selenium use get hit url in browser, cypress get acts like a find element option\n// Should acts as an assert\n// Parent Child Chaining\ncy.get('.products').as('productLocator'); // we can use \"as\" for use like a kind of variable declaration\ncy.get(\"@productLocator\").find('.product').each(($el, index, $list) => {\n  const textVeg = $el.find(\"h4.product-name\").text();\n  if (textVeg.includes('Cashews')) {\n    cy.wrap($el).find('button').click();\n  }\n});\ncy.get('.cart-icon > img').click();\ncy.contains('PROCEED TO CHECKOUT').click();\ncy.get(':nth-child(14)').click(); // fixture",
+              "err": {},
+              "uuid": "a0752534-7b95-46ad-8cb2-857fad12d767",
+              "parentUUID": "a19212c0-760a-4ea7-980e-aaef8a702a7f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a0752534-7b95-46ad-8cb2-857fad12d767"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5960,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

@@ -26,9 +26,17 @@ it ('Demo Example', function () {
     cy.get('#inlineRadio3').should('be.disabled')
     cy.get(':nth-child(2) > .nav-link').click()
     // Call the support command to reuse the code
-    cy.SelectProduct('Blackberry')
-    cy.SelectProduct('Nokia Edge')
+    //this.data.productName
+    //cy.SelectProduct('Blackberry')
+    // Use an array on emple.json ---- this is to select two products using the name 
+    this.data.productName.forEach(function(element) {
+        cy.SelectProduct(element)
+        
+    });
+
+
     
+   
     
 } ) 
 
