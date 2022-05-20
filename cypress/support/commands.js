@@ -21,6 +21,20 @@ Cypress.Commands.add('SelectProduct', (productName) => {
     } 
 
     }) 
+
+
+Cypress.Commands.add("LoginAPI",()=>
+{
+    // request its for API
+    // las userEmail y eso vene de pageload en inspect network
+    cy.request("POST","https://rahulshettyacademy.com/client/api/ecom/auth/login",{"userEmail":"rahulshetty@gmail.com","userPassword":"Iamking@00"}).
+    then(function(response)
+    {
+        expect(response.status).to.eq(200)
+        Cypress.env('token',response.body.token);
+    })
+})
+
 })
 
 // -- This is a child command --
